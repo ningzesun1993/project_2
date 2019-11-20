@@ -11,7 +11,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
 
 ### Initial visualization
 
-* A brief articulation of your chosen topic and rationale
+A brief articulation of your chosen topic and rationale
 Looking at housing data for Ames, Iowa. It's the most comprehensive data set we could. We'll be looking at correlations between various factors and their effect on housing price in that city.
 A link to your dataset(s) and a screenshot of the metadata if it exists.
 ![data](images/data.png)
@@ -21,3 +21,6 @@ A colored map of the most expensive neighborhoods similar to this:
 
 ![showing](images/showing.png)
 ![correlation](images/correlation.png)
+ Our plan is :
+![plan1](images/plan1.jpg)
+![plan2](images/plan2.jpg)
