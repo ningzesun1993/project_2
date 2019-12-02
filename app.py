@@ -90,8 +90,8 @@ def scattor():
     return render_template('index2.html')
 
 
-@app.route('/data')
-def data():
+# @app.route('/data')
+# def data():
     # Find one record of data from the mongo database
     # Return template and data
     # data = ''
