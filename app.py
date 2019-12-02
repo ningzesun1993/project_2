@@ -3,7 +3,7 @@ from flask import Flask, render_template, redirect, jsonify
 from flask_pymongo import PyMongo
 import pandas as pd
 from pymongo import MongoClient
-import json
+# import json
 
 # Create an instance of Flask
 app = Flask(__name__)
@@ -94,23 +94,23 @@ def scattor():
 def data():
     # Find one record of data from the mongo database
     # Return template and data
-    data = ''
-    df_train = pd.read_csv('./Resources/train.csv')
-    uri = "mongodb://localhost:27017"
-    client = MongoClient(uri)
-    dbnames = client.list_database_names()
-    if 'housePriceDB' not in dbnames:
-        print('redo??')
-        # Update the Mongo database using update and upsert=True
-        # Redirect back to home page
-        db = client.get_database('housePriceDB')
-        collection = db.collection
-        # turn the dataframe to json
-        json_train = df_train.to_json(orient='records')
-        json_train = json.loads(json_train)
-        # load the json to mongo db
-        for i in json_train:
-            collection.insert_one(i)
+    # data = ''
+    # df_train = pd.read_csv('./Resources/train.csv')
+    # uri = "mongodb://localhost:27017"
+    # client = MongoClient(uri)
+    # dbnames = client.list_database_names()
+    # if 'housePriceDB' not in dbnames:
+    #     print('redo??')
+    #     # Update the Mongo database using update and upsert=True
+    #     # Redirect back to home page
+    #     db = client.get_database('housePriceDB')
+    #     collection = db.collection
+    #     # turn the dataframe to json
+    #     json_train = df_train.to_json(orient='records')
+    #     json_train = json.loads(json_train)
+    #     # load the json to mongo db
+    #     for i in json_train:
+    #         collection.insert_one(i)
     
 
 
