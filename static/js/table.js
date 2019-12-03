@@ -86,8 +86,9 @@ function maketable(data){
         var tableRef = table.getElementsByTagName('tbody')[0];
         let newRow = tableRef.insertRow(tableRef.rows.length);
         let content = ""
+        let i = 1
         for (key in UFO){
-            content = content + '<td>' + UFO[key] + '</td>'
+            content = content + '<td class="cell100 column' + i + '">' + UFO[key] + '</td>'
         }
         newRow.innerHTML = content
     })

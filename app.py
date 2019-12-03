@@ -7,8 +7,8 @@ import json
 
 # Create an instance of Flask
 app = Flask(__name__)
-temp_url = 'mongodb+srv://ningzesun1993:snz19930702@cluster0-4hpl4.mongodb.net/test?retryWrites=true&w=majority'
-client = MongoClient(temp_url)
+# temp_url = 'mongodb+srv://ningzesun1993:snz19930702@cluster0-4hpl4.mongodb.net/test?retryWrites=true&w=majority'
+# client = MongoClient(temp_url)
 ## Use PyMongo to establish Mongo connection
 # mongo = PyMongo(app, uri="mongodb://localhost:27017/housePriceDB")
 
