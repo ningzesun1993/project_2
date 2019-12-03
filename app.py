@@ -3,11 +3,12 @@ from flask import Flask, render_template, redirect, jsonify
 from flask_pymongo import PyMongo
 import pandas as pd
 from pymongo import MongoClient
-# import json
+import json
 
 # Create an instance of Flask
 app = Flask(__name__)
-
+temp_url = 'mongodb+srv://ningzesun1993:snz19930702@cluster0-4hpl4.mongodb.net/test?retryWrites=true&w=majority'
+client = MongoClient(temp_url)
 ## Use PyMongo to establish Mongo connection
 # mongo = PyMongo(app, uri="mongodb://localhost:27017/housePriceDB")
 
@@ -72,45 +73,32 @@ def cat_list():
     return jsonify(init_list)
 
 
-@app.route("/metadata/<sample>")
-def sample_metadata(sample):
+@app.route("/metadata/")
+def sample_metadata():
     df_train = pd.read_csv('./Resources/train.csv')
-    temp_list = []
-    temp = sorted(list(df_train[sample].unique()))
-    unique_list = []
-    for i in temp:
-        unique_list.append(str(i))
-    for i in df_train[sample].unique():
-        temp_list.append(sorted(list(df_train.loc[df_train[sample] == i,:]['SalePrice'])))
-    result = {'x_axis': unique_list, 'y_axis': temp_list}
-    return jsonify(result)
+    json_train = df_train.to_json(orient='records')
+    json_train = json.loads(json_train)
+    return jsonify(json_train)
 
-@app.route('/scattor')
-def scattor():
-    return render_template('index2.html')
+@app.route('/feature')
+def feature():
+    return render_template('feature.html')
 
+@app.route('/missing')
+def missing():
+    return render_template('missing.html')
 
-# @app.route('/data')
-# def data():
-    # Find one record of data from the mongo database
-    # Return template and data
-    # data = ''
-    # df_train = pd.read_csv('./Resources/train.csv')
-    # uri = "mongodb://localhost:27017"
-    # client = MongoClient(uri)
-    # dbnames = client.list_database_names()
-    # if 'housePriceDB' not in dbnames:
-    #     print('redo??')
-    #     # Update the Mongo database using update and upsert=True
-    #     # Redirect back to home page
-    #     db = client.get_database('housePriceDB')
-    #     collection = db.collection
-    #     # turn the dataframe to json
-    #     json_train = df_train.to_json(orient='records')
-    #     json_train = json.loads(json_train)
-    #     # load the json to mongo db
-    #     for i in json_train:
-    #         collection.insert_one(i)
+@app.route('/importance')
+def importance():
+    return render_template('importance.html')
+
+@app.route('/normal')
+def normal():
+    return render_template('normal.html')
+
+@app.route('/data')
+def data():
+    return render_template('data.html')
     
 
 
