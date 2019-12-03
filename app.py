@@ -57,7 +57,7 @@ def box_plot():
 
 @app.route('/cat_list')
 def cat_list():
-    df_train = pd.read_csv('./Resources/train.csv')
+    df_train = pd.read_csv('./static/data/train.csv')
     init_list = []
     corrmat = df_train.corr()
     #number of variables for heatmap
