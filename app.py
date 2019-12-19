@@ -2,13 +2,10 @@
 from flask import Flask, render_template, redirect, jsonify
 from flask_pymongo import PyMongo
 import pandas as pd
-from pymongo import MongoClient
 import json
 
 # Create an instance of Flask
 app = Flask(__name__)
-temp_url = 'mongodb+srv://ningzesun1993:snz19930702@cluster0-4hpl4.mongodb.net/test?retryWrites=true&w=majority'
-client = MongoClient(temp_url)
 ## Use PyMongo to establish Mongo connection
 # mongo = PyMongo(app, uri="mongodb://localhost:27017/housePriceDB")
 
@@ -45,6 +42,14 @@ def background():
 @app.route('/box_plot')
 def box_plot():
     return render_template('box_plot.html')
+
+@app.route('/box_plot_sub')
+def box_plot_sub():
+    return render_template('box_plot_sub.html')
+
+@app.route('/scatter_sub')
+def scatter_sub():
+    return render_template('scatter_sub.html')
 
 # @app.route('/total_data')
 # def details():

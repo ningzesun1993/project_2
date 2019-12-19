@@ -3,7 +3,7 @@ d3.csv("static/data/data.csv", function(error, rows) {
     var data = [];
     console.log(rows)
 
-    const total_num = 29
+    const total_num = 50
     const change_time = total_num / 11
 
     rows.forEach(function(d) {

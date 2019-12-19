@@ -49,8 +49,8 @@
         <li><a href="/background">Background</a></li>
         <li><a href="/heatmap">Heatmap</a></li>
         <li><a href="/describe">Describe</a></li>
-        <li><a href="/data">Data</a></li>
         <li><a class="selected" href="/feature">Features →</a></li>
+        <li><a href="/data">Model</a></li>
       </ul>
     </div>
     <!--This is the START of the footer-->
@@ -68,9 +68,9 @@
   <div id="blog">
     <div class="blog-item"> <a href="/missing"><img class="single_image" src="{{url_for('static', filename='images/heatmap/missing.png')}}" width="280" height="180" alt="blog1" /></a>
       <div class="blog-item-content"> <a href="/missing">
-        <h5>Missing values</h5>
+        <h5>Missing values checking and filling</h5>
         </a>
-        <p>Some of the columns has missing values, we need to check them</p>
+        <p>Some of the columns have missing values, we need to check them. Based on descriptions of factors, filling missing values with different strategy</p>
         <a class="readmore" href="/missing">read more →</a> <br />
       </div>
     </div>
@@ -79,17 +79,8 @@
         <a href="/normal">
         <h5>Normalizing factors</h5>
         </a>
-        <p>3 different factors are not normalized, using log to normalize them</p>
+        <p>For factors which are not normal, box-cox transformation will be performed to normalize.</p>
         <a class="readmore" href="/normal">read more →</a> <br />
-      </div>
-    </div>
-    <div class="blog-item"> <a href="/importance"><img class="single_image" src="{{url_for('static', filename='images/heatmap/importance.png')}}" width="280" height="180" alt="blog2" /></a>
-      <div class="blog-item-content">
-        <a href="/importance">
-        <h5>Feature importance</h5>
-        </a>
-        <p>Using light GBM to fit in model and plot the feature importance</p>
-        <a class="readmore" href="/importance">read more →</a> <br />
       </div>
     </div>
   <!--END of blog section-->

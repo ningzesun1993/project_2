@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>House Price Feature Normal</title>
+  <title>House Price Scatter</title>
   <link rel="shortcut icon" href="favicon.ico" />
   <!-- Load CSS -->
   <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css" />
@@ -26,55 +26,30 @@
   <script type="text/javascript" src="{{url_for('static', filename='scripts/jquery.easing-1.3.pack.js')}}"></script>
   <script type="text/javascript" src="{{url_for('static', filename='scripts/jquery.mousewheel-3.0.4.pack.js')}}"></script>
   <link rel="stylesheet" href="{{url_for('static', filename='css/jquery.fancybox-1.3.4.css')}}" type="text/css" media="screen" />
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="{{url_for('static', filename='css/d3Style.css')}}">
 </head>
 <body>
-  <!--This is the START of the header-->
-  <div id="topcontrol" style="position: fixed; bottom: 5px; left: 960px; opacity: 1; cursor: pointer;" title="Go to Top"></div>
-  <div id="header-wrapper">
-    <div id="header">
-      <div id="logo"><a href="/"><img src="{{url_for('static', filename='images/logo.png')}}" width="100" height="80" alt="logo" /></a></div>
-      <div id="header-text">
-        <h4>Normalize different factors</h4>
-        <h6><a href="/">Home</a> → Feature</h6>
-      </div>
-    </div>
-  </div>
-  <!--END of header-->
-  <!--This is the START of the menu-->
-<div id="menu-wrapper">
-	<div id="main-menu" style="margin-top:-150px">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/background">Background</a></li>
-      <li><a href="/heatmap">Heatmap</a></li>
-      <li><a href="/describe">Describe</a></li>
-      <li><a class="selected" href="/feature">Features →</a></li>
-      <li><a href="/data">Model</a></li>
-    </ul>
-	</div>
-	<!--This is the START of the footer-->
-	<div id="footer">
-			<h6>© 2019 Kaggle Inc 
-			<a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" title="kaggle" target="_blank">
-				House Prices: Advanced Regression Techniques</a></h6>
-		</div>
-		<!--END of footer-->
-</div>
-<!--END of menu-->
-  <!--END of menu-->
   <!--This is the START of the content-->
-  <div class="row">
-    <div class="slider-wrapper theme-effe" style="margin-top:150px" >
-      <div id="slider" class="nivoSlider" style="width:600px;height:400px"> 
-        <img src="{{url_for('static', filename='images/normal/sale_price_normal.png')}}" title="#img1"/> 
-        <img src="{{url_for('static', filename='images/normal/GrLivArea_normal.png')}}" title="#img2"/> 
-        <img src="{{url_for('static', filename='images/normal/TotalBsmtSF_normal.png')}}" title="#img3"/>  
-      </div>
+    <div class="row">
+        <div class="col-xs-12  col-md-9" style = "margin-top:100px">
+          <div id="scatter">
+          </div>
+        </div>
+
+        <div class = "col-xs-12 col-md-9" style = "margin-left:400px; margin-bottom:100px">
+            <label for="selDataset">Initial Or Preprocessed:</label>
+            <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+
     </div>
-    <div class="col-xs-12  col-md-9" style = "margin-left:200px;margin-top:50px">
-      <iframe src = "/scatter_sub" frameborder="1" width="1420" height="845"></iframe>
-    </div>
-  </div>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/scatter.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+
   <!--END of content-->
 </body>
 </html>

@@ -1,33 +1,32 @@
 <!doctype html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>House Price Violin Plot</title>
-  <link rel="shortcut icon" href="favicon.ico" />
-  <!-- Load CSS -->
-  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css" />
-  <!-- Load Fonts -->
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,italic,bold,bolditalic" type="text/css" />
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold" type="text/css" />
-  <!-- Load jQuery library -->
-  <script type="text/javascript" src="{{url_for('static', filename='scripts/jquery-1.6.2.min.js')}}"></script>
-  <!-- Load custom js -->
-  <script type="text/javascript" src="{{url_for('static', filename='scripts/panelslide.js')}}"></script>
-  <script type="text/javascript" src="{{url_for('static', filename='scripts/custom.js')}}"></script>
-  <!-- Load topcontrol js -->
-  <script type="text/javascript" src="{{url_for('static', filename='scripts/scrolltopcontrol.js')}}"></script>
-  <!-- Load NIVO Slider -->
-  <link rel="stylesheet" href="{{url_for('static', filename='css/nivo-slider.css')}}" type="text/css" media="screen" />
-  <link rel="stylesheet" href="{{url_for('static', filename='css/nivo-theme.css')}}" type="text/css" media="screen" />
-  <script src="{{url_for('static', filename='scripts/jquery.nivo.slider.pack.js')}}" type="text/javascript"></script>
-  <script src="{{url_for('static', filename='scripts/nivo-options.js')}}" type="text/javascript"></script>
-  <!-- Load fancybox -->
-  <script type="text/javascript" src="{{url_for('static', filename='scripts/jquery.fancybox-1.3.4.pack.js')}}"></script>
-  <script type="text/javascript" src="{{url_for('static', filename='scripts/jquery.easing-1.3.pack.js')}}"></script>
-  <script type="text/javascript" src="{{url_for('static', filename='scripts/jquery.mousewheel-3.0.4.pack.js')}}"></script>
-  <link rel="stylesheet" href="{{url_for('static', filename='css/jquery.fancybox-1.3.4.css')}}" type="text/css" media="screen" />
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>House Price</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<!-- Load CSS -->
+<link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css" />
+<!-- Load Fonts -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,italic,bold,bolditalic" type="text/css" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold" type="text/css" />
+<!-- Load jQuery library -->
+<script type="text/javascript" src="{{url_for('static', filename='scripts/jquery-1.6.2.min.js') }}"></script>
+<!-- Load custom js -->
+<script type="text/javascript" src="{{url_for('static', filename='scripts/panelslide.js') }}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='scripts/custom.js') }}"></script>
+<!-- Load topcontrol js -->
+<script type="text/javascript" src="{{url_for('static', filename='scripts/scrolltopcontrol.js') }}"></script>
+<!-- Load NIVO Slider -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/nivo-slider.css') }}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/nivo-theme.css') }}" type="text/css" media="screen" />
+<script src="{{url_for('static', filename='scripts/jquery.nivo.slider.pack.js') }}" type="text/javascript"></script>
+<script src="{{url_for('static', filename='scripts/nivo-options.js') }}" type="text/javascript"></script>
+<!-- Load fancybox -->
+<script type="text/javascript" src="{{url_for('static', filename='scripts/jquery.fancybox-1.3.4.pack.js' )}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='scripts/jquery.easing-1.3.pack.js' )}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='scripts/jquery.mousewheel-3.0.4.pack.js' )}}"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='css/jquery.fancybox-1.3.4.css' )}}" type="text/css" media="screen" />
+
 </head>
 <body>
   <!--This is the START of the header-->
@@ -44,14 +43,14 @@
   <!--END of header-->
 <!--This is the START of the menu-->
 <div id="menu-wrapper">
-  <div id="main-menu">
+  <div id="main-menu" style = "margin-top:150px">
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/background">Background</a></li>
+      <li><a chref="/background">Background</a></li>
       <li><a href="/heatmap">Heatmap</a></li>
-      <li><a class="selected" href="/describe">Describe →</a></li>
-      <li><a href="/data">Data</a></li>
+      <li><a lass="selected" href="/describe">Describe →</a></li>
       <li><a href="/feature">Features</a></li>
+      <li><a href="/data">Model</a></li>
     </ul>
   </div>
   <!--This is the START of the footer-->
@@ -66,11 +65,10 @@
   <!--This is the START of the content-->
   <div class="container">
       <div class="col-xs-12  col-md-6">
-        <div id= "bubble" style = "margin-top:150px">
-        </div>
-        <div align = "center">
-            <h5>Select category factor:</h5>
-            <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          <div class="row">
+              <div class="col-xs-12  col-md-9" style = "margin-left:50px;margin-top:-150px">
+                <iframe src = "/box_plot_sub" frameborder="1" width="1420" height="745"></iframe>
+              </div>
           </div>
       </div>
   </div>
